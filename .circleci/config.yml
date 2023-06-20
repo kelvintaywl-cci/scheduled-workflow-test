@@ -10,6 +10,7 @@ jobs:
 
 workflows:
   everymin:
+    when: false
     triggers:
       - schedule:
           cron: "* * * * *"
