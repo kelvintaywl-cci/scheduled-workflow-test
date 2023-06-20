@@ -6,9 +6,7 @@ jobs:
       - image: cimg/base:current
     resource_class: small
     steps:
-      - run:
-          name: fail on purpose
-          command: exit 1
+      - run: echo test
 
 workflows:
   everymin:
