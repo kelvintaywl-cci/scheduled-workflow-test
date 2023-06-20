@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  test:
+    docker:
+      - image: cimg/base:current
+    resource_class: small
+    steps:
+      - run: echo test
+
+workflows:
+  everymin:
+    triggers:
+      - schedule:
+          cron: "* * * * *"
+          filters:
+            branches:
+              only:
+                - main
+    jobs:
+      - test
