@@ -6,14 +6,16 @@ jobs:
       - image: cimg/base:current
     resource_class: small
     steps:
-      - run: echo test
+      - run: |
+          sleep 30
+          echo test
 
 workflows:
-  everymin:
+  twentyfirstmin:
     when: false
     triggers:
       - schedule:
-          cron: "* * * * *"
+          cron: "21 * * * *"
           filters:
             branches:
               only:
