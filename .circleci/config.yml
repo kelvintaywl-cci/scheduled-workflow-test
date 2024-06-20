@@ -11,11 +11,10 @@ jobs:
           echo test
 
 workflows:
-  twentyfirstmin:
-    when: false
+  everyfifth:
     triggers:
       - schedule:
-          cron: "21 * * * *"
+          cron: "*/5 * * * *"
           filters:
             branches:
               only:
